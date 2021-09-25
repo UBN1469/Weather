@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="Weather">Weather</string>
+    <string name="choice_city">Выбор города</string>
 </resources>
