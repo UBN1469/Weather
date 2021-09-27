@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Weather">Погода</string>
+    <string name="Moscow">Москва</string>
+    <string name="SaintPetersburg">Санкт-Петербург</string>
+    <string name="Cheboksary">Чебоксары</string>
+    <string name="Kazan">Казань</string>
 </resources>
