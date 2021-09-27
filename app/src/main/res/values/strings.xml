@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Weather application</string>
     <string name="Weather">Weather</string>
-    <string name="choice_city">Выбор города</string>
+    <string name="choice_city">Choice city</string>
     <string name="Moscow">Moscow</string>
     <string name="SaintPetersburg">Saint Petersburg</string>
     <string name="Cheboksary">Cheboksary</string>

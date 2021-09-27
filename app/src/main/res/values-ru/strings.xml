@@ -5,4 +5,6 @@
     <string name="SaintPetersburg">Санкт-Петербург</string>
     <string name="Cheboksary">Чебоксары</string>
     <string name="Kazan">Казань</string>
+    <string name="app_name">Погодное приложение</string>
+    <string name="choice_city">Выбор города</string>
 </resources>
