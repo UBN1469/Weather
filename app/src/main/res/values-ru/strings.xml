@@ -7,4 +7,7 @@
     <string name="Kazan">Казань</string>
     <string name="app_name">Погодное приложение</string>
     <string name="choice_city">Выбор города:</string>
+    <string name="inter_the_city">Введите город</string>
+    <string name="pressure">Давление</string>
+    <string name="wind_speed">Скорость ветра</string>
 </resources>

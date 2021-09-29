@@ -6,4 +6,7 @@
     <string name="SaintPetersburg">Saint Petersburg</string>
     <string name="Cheboksary">Cheboksary</string>
     <string name="Kazan">Kazan</string>
+    <string name="inter_the_city">Inter the city</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_speed">Wind speed</string>
 </resources>
