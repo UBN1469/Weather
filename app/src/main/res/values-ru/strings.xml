@@ -10,4 +10,6 @@
     <string name="inter_the_city">Введите город</string>
     <string name="pressure">Давление</string>
     <string name="wind_speed">Скорость ветра</string>
+    <string name="setting">Настройки</string>
+    <string name="dark_theme">Тёмна тема</string>
 </resources>

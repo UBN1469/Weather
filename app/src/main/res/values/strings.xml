@@ -9,4 +9,6 @@
     <string name="inter_the_city">Inter the city</string>
     <string name="pressure">Pressure</string>
     <string name="wind_speed">Wind speed</string>
+    <string name="setting">Setting</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>
