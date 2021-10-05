@@ -18,28 +18,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+        android:layout_width="382dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setting">
 
-        <TextView
-            android:id="@+id/textViewDarkTheme"
-            android:layout_width="wrap_content"
+        <CheckBox
+            android:id="@+id/checkBoxDarkTheme"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="@string/dark_theme"
-            android:textSize="20sp" />
+            android:button="@null"
+            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/dark_theme" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
+            android:id="@+id/checkBoxWindSpeed"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:button="@null"
+            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/wind_speed" />
 
+        <CheckBox
+            android:id="@+id/checkBoxHumidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/humidity" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

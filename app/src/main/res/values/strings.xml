@@ -11,4 +11,5 @@
     <string name="wind_speed">Wind speed</string>
     <string name="setting">Setting</string>
     <string name="dark_theme">Dark Theme</string>
+    <string name="humidity">Humidity</string>
 </resources>

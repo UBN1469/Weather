@@ -12,4 +12,5 @@
     <string name="wind_speed">Скорость ветра</string>
     <string name="setting">Настройки</string>
     <string name="dark_theme">Тёмна тема</string>
+    <string name="humidity">Влажность</string>
 </resources>
