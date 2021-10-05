@@ -31,24 +31,18 @@
             android:id="@+id/checkBoxDarkTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
             android:text="@string/dark_theme" />
 
         <CheckBox
             android:id="@+id/checkBoxWindSpeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
             android:text="@string/wind_speed" />
 
         <CheckBox
             android:id="@+id/checkBoxHumidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
             android:text="@string/humidity" />
     </LinearLayout>
 
