@@ -12,4 +12,5 @@
     <string name="setting">Setting</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="humidity">Humidity</string>
+    <string name="todo">TODO</string>
 </resources>
