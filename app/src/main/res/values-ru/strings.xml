@@ -13,4 +13,5 @@
     <string name="setting">Настройки</string>
     <string name="dark_theme">Тёмна тема</string>
     <string name="humidity">Влажность</string>
+    <string name="Close">Close</string>
 </resources>
