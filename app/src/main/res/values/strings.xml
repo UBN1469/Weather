@@ -14,4 +14,5 @@
     <string name="humidity">Humidity</string>
     <string name="todo">TODO</string>
     <string name="Close">Close</string>
+    <string name="city">City</string>
 </resources>
