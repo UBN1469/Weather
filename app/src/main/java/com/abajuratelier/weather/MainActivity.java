@@ -1,16 +1,19 @@
 package com.abajuratelier.weather;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements Constants{
+    private final static int REQUEST_CODE = 1 ; // Константа
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String instanceState;
 
-        if (savedInstanceState == null) {
-            instanceState = "Первый запуск";
-        }
-        else {
-            instanceState = " Повторный запуск";
-
-
-        }
-        Toast.makeText(MainActivity.this," -onCreate() "+ instanceState, Toast.LENGTH_SHORT).show();
-        Log.d("MainActivity", " -onCreate() "+ instanceState);
-
-
         ImageView setting = findViewById(R.id.setting );
         TextView city = findViewById(R.id.city);
+
         setting.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,12 +39,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                Toast. makeText (MainActivity. this , "button2 ClickListener event!" ,
 //                        Toast. LENGTH_SHORT ).show();
-                startActivity(new Intent(MainActivity.this,CityActivity.class));
+                //startActivity(new Intent(MainActivity.this,CityActivity.class));
+                Intent intent = new Intent(MainActivity.this,CityActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
 
             }
         });
 
+
     }
+    //Также добавляем обработку результата работы второй активити:
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != REQUEST_CODE){
+        super.onActivityResult(requestCode, resultCode, data);
+        return;
+        }
+        if (resultCode == RESULT_OK){
+            TextView textViewCity = findViewById(R.id.city);
+            textViewCity.setText(data.getStringExtra(CITY));
+
+        }
+    }
+
     //Методы жизненого цикла:
     @Override
     protected void onStart() {
