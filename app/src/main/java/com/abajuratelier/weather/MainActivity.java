@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
     private final static int REQUEST_CODE = 1 ; // Константа
     private String city;
     private TextView textCity;
+    private  String tempreche;
+    private TextView textTempreche;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
 
         ImageView setting = findViewById(R.id.setting );
         textCity = findViewById(R.id.city);
+        textTempreche = findViewById(R.id.temperature);
 
         setting.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
         if (resultCode == RESULT_OK){
             //TextView textViewCity = findViewById(R.id.city);
             textCity.setText(data.getStringExtra(CITY));
+            textTempreche.setText(data.getStringExtra(TEMPRECHE));
 
         }
     }

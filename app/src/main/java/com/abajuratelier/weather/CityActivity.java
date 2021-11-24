@@ -34,8 +34,13 @@ public class CityActivity extends AppCompatActivity implements Constants{
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.interTheCity);
+
+                EditText editTextTempreche = findViewById(R.id.editTextTempreche);
                 Intent intentResult =new Intent();
                 intentResult.putExtra(CITY,editText.getText().toString());
+                setResult(RESULT_OK, intentResult);
+
+                intentResult.putExtra(TEMPRECHE,editTextTempreche.getText().toString());
                 setResult(RESULT_OK, intentResult);
                 finish();
             }
