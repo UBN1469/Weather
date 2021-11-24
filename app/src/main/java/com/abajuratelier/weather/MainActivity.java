@@ -14,15 +14,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements Constants{
     private final static int REQUEST_CODE = 1 ; // Константа
+    private String city;
+    private TextView textCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String instanceState;
+
 
         ImageView setting = findViewById(R.id.setting );
-        TextView city = findViewById(R.id.city);
+        textCity = findViewById(R.id.city);
 
         setting.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
             }
         });
 
-        city.setOnClickListener( new View.OnClickListener() {
+        textCity.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Toast. makeText (MainActivity. this , "button2 ClickListener event!" ,
@@ -58,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
         return;
         }
         if (resultCode == RESULT_OK){
-            TextView textViewCity = findViewById(R.id.city);
-            textViewCity.setText(data.getStringExtra(CITY));
+            //TextView textViewCity = findViewById(R.id.city);
+            textCity.setText(data.getStringExtra(CITY));
 
         }
     }
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
     @Override
     protected void onRestoreInstanceState(Bundle saveInstanceState){
         super .onRestoreInstanceState(saveInstanceState);
+        city = saveInstanceState.getString(CITY_BUNDLE);
+        textCity.setText((String)city.toString());
         Toast. makeText (getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()" , Toast. LENGTH_SHORT ).show();
         Log.d("MainActivity", "Повторный запуск!! - onRestoreInstanceState()" );
     }
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
     @Override
     protected void onSaveInstanceState(Bundle saveInstanceState){
         super .onSaveInstanceState(saveInstanceState);
+        saveInstanceState.putString(CITY_BUNDLE,textCity.getText().toString());
         Toast. makeText (getApplicationContext(), "onSaveInstanceState()" ,
                 Toast. LENGTH_SHORT ).show();
         Log.d("MainActivity", "onSaveInstanceState()" );

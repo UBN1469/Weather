@@ -17,6 +17,17 @@ public class CityActivity extends AppCompatActivity implements Constants{
         setContentView(R.layout.activity_city);
 
         TextView textViewMoscow = findViewById(R.id.textMoscow);
+        textViewMoscow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentResult =new Intent();
+                intentResult.putExtra(CITY,textViewMoscow.getText().toString());
+                setResult(RESULT_OK, intentResult);
+
+            }
+        });
+
+
 
         Button buttoninterTheCity = findViewById(R.id.buttonInterTheCity);
         buttoninterTheCity.setOnClickListener(new View.OnClickListener() {
