@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity implements Constants{
 
 
     }
+
+
     //Также добавляем обработку результата работы второй активити:
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode != REQUEST_CODE){
@@ -82,6 +82,11 @@ public class MainActivity extends AppCompatActivity implements Constants{
         super .onRestoreInstanceState(saveInstanceState);
         city = saveInstanceState.getString(CITY_BUNDLE);
         textCity.setText((String)city.toString());
+
+        tempreche =saveInstanceState.getString(TEMPRECHE_BUNDLE);
+        textTempreche.setText((String)tempreche.toString());
+
+
         Toast. makeText (getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()" , Toast. LENGTH_SHORT ).show();
         Log.d("MainActivity", "Повторный запуск!! - onRestoreInstanceState()" );
     }
@@ -103,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
     protected void onSaveInstanceState(Bundle saveInstanceState){
         super .onSaveInstanceState(saveInstanceState);
         saveInstanceState.putString(CITY_BUNDLE,textCity.getText().toString());
+        saveInstanceState.putString(TEMPRECHE_BUNDLE,textTempreche.getText().toString());
+
         Toast. makeText (getApplicationContext(), "onSaveInstanceState()" ,
                 Toast. LENGTH_SHORT ).show();
         Log.d("MainActivity", "onSaveInstanceState()" );
