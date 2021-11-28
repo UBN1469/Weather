@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
     private final static int REQUEST_CODE = 1 ; // Константа
     private String city;
     private TextView textCity;
-    private  String tempreche;
-    private TextView textTempreche;
+    private  String temperature;
+    private TextView textTemperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
 
         ImageView setting = findViewById(R.id.setting );
         textCity = findViewById(R.id.city);
-        textTempreche = findViewById(R.id.temperature);
+        textTemperature = findViewById(R.id.temperature);
 
         setting.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
         if (resultCode == RESULT_OK){
             //TextView textViewCity = findViewById(R.id.city);
             textCity.setText(data.getStringExtra(CITY));
-            textTempreche.setText(data.getStringExtra(TEMPRECHE));
+            textTemperature.setText(data.getStringExtra(TEMPERATURE));
 
         }
     }
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements Constants{
         city = saveInstanceState.getString(CITY_BUNDLE);
         textCity.setText((String)city.toString());
 
-        tempreche =saveInstanceState.getString(TEMPRECHE_BUNDLE);
-        textTempreche.setText((String)tempreche.toString());
+        temperature =saveInstanceState.getString(TEMPERATURE_BUNDLE);
+        textTemperature.setText((String)temperature.toString());
 
 
         Toast. makeText (getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()" , Toast. LENGTH_SHORT ).show();
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements Constants{
     protected void onSaveInstanceState(Bundle saveInstanceState){
         super .onSaveInstanceState(saveInstanceState);
         saveInstanceState.putString(CITY_BUNDLE,textCity.getText().toString());
-        saveInstanceState.putString(TEMPRECHE_BUNDLE,textTempreche.getText().toString());
+        saveInstanceState.putString(TEMPERATURE_BUNDLE,textTemperature.getText().toString());
 
         Toast. makeText (getApplicationContext(), "onSaveInstanceState()" ,
                 Toast. LENGTH_SHORT ).show();

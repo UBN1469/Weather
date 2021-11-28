@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CityActivity extends AppCompatActivity implements Constants{
+    EditText editTextinterTheCity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +22,22 @@ public class CityActivity extends AppCompatActivity implements Constants{
         textViewMoscow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentResult =new Intent();
-                intentResult.putExtra(CITY,textViewMoscow.getText().toString());
-                setResult(RESULT_OK, intentResult);
-
+                editTextinterTheCity = findViewById(R.id.interTheCity);
+                editTextinterTheCity.setText("Moscow");
+                //Intent intentResult =new Intent();
+                //intentResult.putExtra(CITY,textViewMoscow.getText().toString());
+                //setResult(RESULT_OK, intentResult);
             }
         });
+        TextView textViewSaintPetersburg = findViewById(R.id.textSaintPetersburg);
+        textViewSaintPetersburg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextinterTheCity = findViewById(R.id.interTheCity);
+                editTextinterTheCity.setText("Saint-Petersburg");
+            }
+        });
+
 
 
 
@@ -33,16 +45,29 @@ public class CityActivity extends AppCompatActivity implements Constants{
         buttoninterTheCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editText = findViewById(R.id.interTheCity);
-
-                EditText editTextTempreche = findViewById(R.id.editTextTempreche);
+                editTextinterTheCity = findViewById(R.id.interTheCity);
+                EditText editTextTemperature = findViewById(R.id.editTextTemperature); ;
                 Intent intentResult =new Intent();
-                intentResult.putExtra(CITY,editText.getText().toString());
+                intentResult.putExtra(CITY,editTextinterTheCity.getText().toString());
                 setResult(RESULT_OK, intentResult);
-
-                intentResult.putExtra(TEMPRECHE,editTextTempreche.getText().toString());
+                intentResult.putExtra(TEMPERATURE,editTextTemperature.getText().toString());
                 setResult(RESULT_OK, intentResult);
                 finish();
+            }
+        });
+
+        final  Presenter presenter = Presenter.getInstance();
+        EditText editTextTemperature = findViewById(R.id.editTextTemperature); ;
+        editTextTemperature.setText(((Integer)presenter.getCounter()).toString());
+
+
+        Button buttonIncreaseTemp = findViewById((R.id.increaseTemperature));
+        buttonIncreaseTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.incrementTempreche();
+                editTextTemperature.setText(((Integer)presenter.getCounter()).toString());
+
             }
         });
 
