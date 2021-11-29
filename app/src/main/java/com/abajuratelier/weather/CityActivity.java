@@ -46,7 +46,7 @@ public class CityActivity extends AppCompatActivity implements Constants{
             @Override
             public void onClick(View v) {
                 editTextinterTheCity = findViewById(R.id.interTheCity);
-                EditText editTextTemperature = findViewById(R.id.editTextTemperature); ;
+                TextView editTextTemperature = findViewById(R.id.editTextTemperature); ;
                 Intent intentResult =new Intent();
                 intentResult.putExtra(CITY,editTextinterTheCity.getText().toString());
                 setResult(RESULT_OK, intentResult);
@@ -57,7 +57,7 @@ public class CityActivity extends AppCompatActivity implements Constants{
         });
 
         final  Presenter presenter = Presenter.getInstance();
-        EditText editTextTemperature = findViewById(R.id.editTextTemperature); ;
+        TextView editTextTemperature = findViewById(R.id.editTextTemperature); ;
         editTextTemperature.setText(((Integer)presenter.getCounter()).toString());
 
 
