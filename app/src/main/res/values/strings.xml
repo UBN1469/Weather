@@ -15,4 +15,8 @@
     <string name="todo">TODO</string>
     <string name="Close">Close</string>
     <string name="city">City</string>
+    <string name="enter">Enter</string>
+    <string name="about_city">About city</string>
+    <string name="about_the_city">about The City</string>
+    <string name="new_york">New York</string>
 </resources>
