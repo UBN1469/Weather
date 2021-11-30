@@ -91,7 +91,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <EditText
+    <TextView
         android:id="@+id/interTheCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,6 +128,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
+        android:ems="2"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/textViewInteTemperature"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewInteTemperature"

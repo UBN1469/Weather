@@ -1,9 +1,11 @@
 package com.abajuratelier.weather;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.net.URI;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements Constants{
     private final static int REQUEST_CODE = 1 ; // Константа
@@ -50,6 +55,19 @@ public class MainActivity extends AppCompatActivity implements Constants{
 
             }
         });
+        Button buttonAboutTheCity = findViewById(R.id.aboutTheCity);
+        buttonAboutTheCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url ="https://ru.wikipedia.org/wiki/"+ textCity.getText().toString();
+                Toast.makeText(MainActivity.this, url,Toast.LENGTH_LONG).show();
+                Uri uri = Uri.parse(url);
+                Intent browser = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(browser);
+
+
+            }
+        });
 
 
     }
@@ -63,12 +81,13 @@ public class MainActivity extends AppCompatActivity implements Constants{
         return;
         }
         if (resultCode == RESULT_OK){
-            //TextView textViewCity = findViewById(R.id.city);
             textCity.setText(data.getStringExtra(CITY));
             textTemperature.setText(data.getStringExtra(TEMPERATURE));
-
         }
     }
+
+
+
 
     //Методы жизненого цикла:
     @Override

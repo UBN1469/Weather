@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CityActivity extends AppCompatActivity implements Constants{
-    EditText editTextinterTheCity;
+   TextView editTextinterTheCity;
 
 
     @Override
@@ -46,7 +46,9 @@ public class CityActivity extends AppCompatActivity implements Constants{
             @Override
             public void onClick(View v) {
                 editTextinterTheCity = findViewById(R.id.interTheCity);
-                TextView editTextTemperature = findViewById(R.id.editTextTemperature); ;
+                TextView editTextTemperature = findViewById(R.id.editTextTemperature);
+
+
                 Intent intentResult =new Intent();
                 intentResult.putExtra(CITY,editTextinterTheCity.getText().toString());
                 setResult(RESULT_OK, intentResult);
