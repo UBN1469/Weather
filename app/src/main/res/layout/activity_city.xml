@@ -54,6 +54,12 @@
             android:layout_height="wrap_content"
             android:text="@string/Kazan"
             android:textSize="20sp" />
+        <TextView
+            android:id="@+id/textOslo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/oslo"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
